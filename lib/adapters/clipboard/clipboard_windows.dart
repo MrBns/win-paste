@@ -96,6 +96,8 @@ class ClipboardWindows implements ClipboardPort, ClipboardListener {
   }
 
   Future<List<String>?> _readFilesFromClipboard() async {
+    // Passing 0 (NULL) means the clipboard is opened on behalf of the current
+    // thread, which is the correct behaviour for a foreground Dart isolate.
     if (!OpenClipboard(0).toBool()) return null;
     final hDrop = GetClipboardData(CF_HDROP);
     if (hDrop == 0) {

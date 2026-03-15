@@ -582,7 +582,8 @@ class _AboutRow extends StatelessWidget {
               const Icon(Icons.code, size: 14, color: AppColors.textMuted),
               const SizedBox(width: 4),
               const Text(
-                'https://github.com/win-paste/win-paste',
+                // TODO: update to the actual repository URL before shipping
+                'https://github.com/MrBns/win-paste',
                 style: TextStyle(
                   color: AppColors.primaryAccent,
                   fontSize: 12,

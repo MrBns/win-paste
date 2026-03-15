@@ -51,6 +51,9 @@ class _HotkeyRecorderWidgetState extends State<HotkeyRecorderWidget> {
         keyLabel != 'shift' &&
         keyLabel != 'alt' &&
         keyLabel != 'meta') {
+      // Flutter key labels use spaces for multi-word keys (e.g. "Page Up").
+      // We normalise to underscores so the string is a valid single token
+      // for hotkey_manager parsing (e.g. "page_up").
       parts.add(keyLabel.replaceAll(' ', '_'));
     }
 

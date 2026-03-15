@@ -76,8 +76,11 @@ class WindowWindows implements WindowPort, WindowListener {
 
   @override
   void onWindowBlur() {
-    // Auto-hide when window loses focus
-    hide();
+    // Auto-hide when window loses focus; guard to avoid a redundant call
+    // if the window is already hidden (e.g. programmatic hide triggered this).
+    windowManager.isVisible().then((visible) {
+      if (visible) hide();
+    });
   }
 
   @override

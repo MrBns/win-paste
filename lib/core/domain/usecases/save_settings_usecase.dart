@@ -23,11 +23,12 @@ class SaveSettingsUseCase {
     if (newSettings.maxHistoryItems < 100 || newSettings.maxHistoryItems > 10000) {
       throw ArgumentError('maxHistoryItems must be between 100 and 10000');
     }
-    if (newSettings.windowWidth < 300) {
-      throw ArgumentError('windowWidth must be at least 300');
+    // Bounds match the _NumberRow constraints in SettingsScreen (400–1200 × 300–900)
+    if (newSettings.windowWidth < 400 || newSettings.windowWidth > 1200) {
+      throw ArgumentError('windowWidth must be between 400 and 1200');
     }
-    if (newSettings.windowHeight < 200) {
-      throw ArgumentError('windowHeight must be at least 200');
+    if (newSettings.windowHeight < 300 || newSettings.windowHeight > 900) {
+      throw ArgumentError('windowHeight must be between 300 and 900');
     }
 
     await _settings.saveSettings(newSettings);
