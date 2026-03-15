@@ -1,0 +1,36 @@
+name: win_paste
+description: Advanced clipboard manager for Windows built with Flutter
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.19.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  window_manager: ^0.3.9
+  tray_manager: ^0.2.3
+  hotkey_manager: ^0.2.3
+  clipboard_watcher: ^0.2.0
+  pasteboard: ^0.2.0
+  win32: ^5.5.4
+  sqflite: ^2.3.3+1
+  path_provider: ^2.1.4
+  path: ^1.9.0
+  provider: ^6.1.2
+  shared_preferences: ^2.3.2
+  intl: ^0.19.0
+  uuid: ^4.5.1
+  screen_retriever: ^0.1.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
